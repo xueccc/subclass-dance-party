@@ -31,8 +31,11 @@ makeBlinkyDancer.prototype.oldStep = makeDancer.prototype.step;
 makeBlinkyDancer.prototype.step = function() {
   this.oldStep();
   this.$node.animate({
-    top: "-=20",
-  }, 'slow', function() { if (top > 1000) return; });
+    left: "-=50",
+  }, 'slow');
+  this.$node.animate({
+    left: "+=50",
+  }, 'slow');
 
 };
 
