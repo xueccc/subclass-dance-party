@@ -18,6 +18,14 @@ describe('blinkyDancer', function() {
     expect(blinkyDancer.$node.toggle.called).to.be.true;
   });
 
+  it('should have a constructor of makeBlinkyDancer', function() {
+    expect(blinkyDancer).to.be.instanceof(makeBlinkyDancer);
+  });
+
+  it('should have a lineUp function', function() {
+    expect(blinkyDancer.lineUp).to.be.a('function');
+  });
+
   describe('dance', function() {
     it('should call step at least once per second', function() {
       sinon.spy(blinkyDancer, 'step');

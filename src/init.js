@@ -33,7 +33,7 @@ $(document).ready(function() {
     for (var i = 0; i < window.dancers.length; i++) {
       if (Math.abs(window.dancers[i].left - dancer.left) < 150 && Math.abs(window.dancers[i].top - dancer.top) < 150) {
         dancer.$node.animate({
-          left: "-=20",
+          left: '-=20',
         });
         dancer.$node.toggleClass('rotate'); 
         window.dancers[i].$node.toggleClass('rotate');
