@@ -36,7 +36,7 @@ makeBlinkyDancer.prototype.step = function() {
   this.$node.animate({
     left: "+=50",
   }, 'slow');
-
+  this.$node.toggle();
 };
 
 makeBlinkyDancer.prototype.lineUp = function(newLeft) {

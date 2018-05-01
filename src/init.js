@@ -27,16 +27,22 @@ $(document).ready(function() {
       $('body').width() * Math.random(),
       Math.random() * 1000
     );
-    $('body').append(dancer.$node);
 
+    $('body').prepend(dancer.$node);
+
+    for (var i = 0; i < window.dancers.length; i++) {
+      if (Math.abs(window.dancers[i].left - dancer.left) < 150 && Math.abs(window.dancers[i].top - dancer.top) < 150) {
+        dancer.$node.animate({
+          left: "-=20",
+        });
+        dancer.$node.toggleClass('rotate'); 
+        window.dancers[i].$node.toggleClass('rotate');
+      }
+    }
     window.dancers.push(dancer);
   });
 
   $('.lineUpButton').on('click', function(event) {
-    // $('.dancer').css({ 
-    //   'position' : 'static',
-    //   'display' : 'inline-block'
-    // });
     for (var i = 0; i < window.dancers.length; i++) {
       var newLeft;
       window.dancers[i].lineUp(newLeft);
@@ -44,9 +50,9 @@ $(document).ready(function() {
     }
   });
 
- $('body').on('mouseover', '.dancer', function () {
-  $(this).fadeOut(100);
-  $(this).fadeIn(500);
- });
+  $('body').on('mouseover', '.dancer', function () {
+    $(this).fadeOut(100);
+    $(this).fadeIn(500);
+  });
 
 });

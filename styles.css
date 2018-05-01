@@ -29,3 +29,11 @@ body, a:link, a:visited, a:active{
   padding: 10px;
   margin: 10px;
 }
+.img{
+  width: 30px;
+}
+
+.rotate {
+    transform: rotate(-1080deg);
+    transition: .30s;
+}
