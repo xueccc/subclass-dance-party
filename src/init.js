@@ -23,11 +23,30 @@ $(document).ready(function() {
     // make a dancer with a random position
 
     var dancer = new dancerMakerFunction(
-      $("body").height() * Math.random(),
-      $("body").width() * Math.random(),
+      $('body').height() * Math.random(),
+      $('body').width() * Math.random(),
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
-  });
-});
 
+    window.dancers.push(dancer);
+  });
+
+  $('.lineUpButton').on('click', function(event) {
+    // $('.dancer').css({ 
+    //   'position' : 'static',
+    //   'display' : 'inline-block'
+    // });
+    for (var i = 0; i < window.dancers.length; i++) {
+      var newLeft;
+      window.dancers[i].lineUp(newLeft);
+      newLeft += 100;
+    }
+  });
+
+ $('body').on('mouseover', '.dancer', function () {
+  $(this).fadeOut(100);
+  $(this).fadeIn(500);
+ });
+
+});

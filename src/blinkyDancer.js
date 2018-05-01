@@ -20,15 +20,22 @@
 
 var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
   makeDancer.call(this, top, left, timeBetweenSteps);
-}
+  this.$node.append('<span class="picture"><img src="src/alpaca.gif"></img></span>');
+};
 
 makeBlinkyDancer.prototype = Object.create(makeDancer.prototype);
 makeBlinkyDancer.prototype.constructor = makeBlinkyDancer;
 
 makeBlinkyDancer.prototype.oldStep = makeDancer.prototype.step;
 
-makeBlinkyDancer.prototype.step = function(){
+makeBlinkyDancer.prototype.step = function() {
   this.oldStep();
-  this.$node.toggle();
-} 
+  this.$node.animate({
+    top: "-=20",
+  }, 'slow', function() { if (top > 1000) return; });
 
+};
+
+makeBlinkyDancer.prototype.lineUp = function(newLeft) {
+  this.$node.css({top: 800, left: newLeft});
+}

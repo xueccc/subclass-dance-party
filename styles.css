@@ -1,25 +1,31 @@
 body, html{
   height:100%;
+  background: url(src/field.jpg);
+  font-family: Helvetica;
 }
 body{
   margin: 0px;
   background-color:#444;
-  font-size: 18px;
+  font-size: 16px;
+  width: 100%;
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
-.title, .addDancerButton{
-  padding:5px 12px;
+.title, .addDancerButton, .lineUpButton{
+  padding:7px 12px;
   float:right;
 }
 .topbar{
   height:32px;
-  background-color: #555;
+  background-color: #000000;
+  opacity: .5;
 }
 .title{
-  background-color: #777;
+  background-color: #000000;
 }
 .dancer{
-  position:absolute;
+  position: absolute;
+  padding: 10px;
+  margin: 10px;
 }
