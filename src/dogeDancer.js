@@ -1,18 +1,18 @@
-var makeDogeDancer = function(top, left, timeBetweenSteps) {
-  makeDancer.call(this, top, left, timeBetweenSteps);
+var DogeDancer = function(top, left, timeBetweenSteps) {
+  Dancer.call(this, top, left, timeBetweenSteps);
   this.$node.append('<span class="picture"><img src="src/shiba.gif"></img></span>');
 };
 
-makeDogeDancer.prototype = Object.create(makeDancer.prototype);
-makeDogeDancer.prototype.constructor = makeDogeDancer;
+DogeDancer.prototype = Object.create(Dancer.prototype);
+DogeDancer.prototype.constructor = DogeDancer;
 
-makeDogeDancer.prototype.oldStep = makeDancer.prototype.step;
+DogeDancer.prototype.oldStep = Dancer.prototype.step;
 
-makeDogeDancer.prototype.step = function() {
+DogeDancer.prototype.step = function() {
   this.oldStep();
 };
 
-makeDogeDancer.prototype.lineUp = function(newLeft) {
+DogeDancer.prototype.lineUp = function(newLeft) {
   this.$node.css({top: 650, left: newLeft});
 }
 

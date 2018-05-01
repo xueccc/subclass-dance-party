@@ -1,17 +1,17 @@
-var makeBirdDancer = function(top, left, timeBetweenSteps) {
-  makeDancer.call(this, top, left, timeBetweenSteps);
+var BirdDancer = function(top, left, timeBetweenSteps) {
+  Dancer.call(this, top, left, timeBetweenSteps);
   this.$node.append('<span class="picture"><img src="src/bird.gif"></img></span>');
 };
 
-makeBirdDancer.prototype = Object.create(makeDancer.prototype);
-makeBirdDancer.prototype.constructor = makeBirdDancer;
+BirdDancer.prototype = Object.create(Dancer.prototype);
+BirdDancer.prototype.constructor = BirdDancer;
 
-makeBirdDancer.prototype.oldStep = makeDancer.prototype.step;
+BirdDancer.prototype.oldStep = Dancer.prototype.step;
 
-makeBirdDancer.prototype.step = function() {
+BirdDancer.prototype.step = function() {
   this.oldStep();
 };
 
-makeBirdDancer.prototype.lineUp = function(newLeft) {
+BirdDancer.prototype.lineUp = function(newLeft) {
   this.$node.css({top: 200, left: newLeft});
 }

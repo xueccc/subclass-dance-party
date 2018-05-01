@@ -1,19 +1,22 @@
-body, html{
+body, html {
   height:100%;
   background: url(src/field.jpg);
   font-family: Helvetica;
   overflow-x: hidden;
   overflow-y: hidden;
+
 }
-body{
+body {
   margin: 0px;
   background-color:#444;
   font-size: 16px;
   width: 100%;
 }
+
 body, a:link, a:visited, a:active{
   color: #000000;
 }
+
 .title {
   padding: 5px;
   text-align: center;
@@ -21,17 +24,18 @@ body, a:link, a:visited, a:active{
   color: #FFFFFF;
 }
 
-.button{
+.button {
   background-color: #000000;
   color: green;
 }
-.topbar{
+
+.topbar {
   height:32px;
   background-color: #000000;
   opacity: .5;
-
 }
-.title{
+
+.title {
   background-color: #000000;
 }
 

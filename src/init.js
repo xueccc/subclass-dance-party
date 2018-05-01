@@ -43,10 +43,20 @@ $(document).ready(function() {
   });
 
   $('.lineUpButton').on('click', function(event) {
+    var dogeLeft = 0;
+    var blinkyLeft = 0;
+    var birdLeft = 0;
     for (var i = 0; i < window.dancers.length; i++) {
-      var newLeft;
-      window.dancers[i].lineUp(newLeft);
-      newLeft += 100;
+      if (window.dancers[i].constructor.name === DogeDancer.prototype.constructor.name) {
+        window.dancers[i].lineUp(dogeLeft);
+        dogeLeft += 50;
+      } else if (window.dancers[i].constructor.name === BlinkyDancer.prototype.constructor.name) {
+        window.dancers[i].lineUp(blinkyLeft);
+        blinkyLeft += 50;
+      } else {
+        window.dancers[i].lineUp(birdLeft);
+        birdLeft += 50;
+      }
     }
   });
 

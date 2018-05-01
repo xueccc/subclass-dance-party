@@ -18,27 +18,27 @@
 //   return blinkyDancer;
 // };
 
-var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
-  makeDancer.call(this, top, left, timeBetweenSteps);
+var BlinkyDancer = function(top, left, timeBetweenSteps) {
+  Dancer.call(this, top, left, timeBetweenSteps);
   this.$node.append('<span class="picture"><img src="src/alpaca.gif"></img></span>');
 };
 
-makeBlinkyDancer.prototype = Object.create(makeDancer.prototype);
-makeBlinkyDancer.prototype.constructor = makeBlinkyDancer;
+BlinkyDancer.prototype = Object.create(Dancer.prototype);
+BlinkyDancer.prototype.constructor = BlinkyDancer;
 
-makeBlinkyDancer.prototype.oldStep = makeDancer.prototype.step;
+BlinkyDancer.prototype.oldStep = Dancer.prototype.step;
 
-makeBlinkyDancer.prototype.step = function() {
+BlinkyDancer.prototype.step = function() {
   this.oldStep();
   this.$node.animate({
-    left: '-=50',
+    left: '-=100',
   }, 'slow');
   this.$node.animate({
-    left: '+=50',
+    left: '+=100',
   }, 'slow');
   this.$node.toggle();
 };
 
-makeBlinkyDancer.prototype.lineUp = function(newLeft) {
+BlinkyDancer.prototype.lineUp = function(newLeft) {
   this.$node.css({top: 800, left: newLeft});
 };
